@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+  </head>
+  <body>
+    <h1>Edit <%= user.name %></h1>
+
+    <form  action="/users/<%=user.id %>" method="post">
+      <input type="hidden" name="_method" value="PUT">
+      <input type="text" name="name" value="<%= user.name %>">
+      <input type="text" name="email" value="<%= user.email %>">
+      <button type="submit">Edit User</button>
+    </form>
+  </body>
+</html>

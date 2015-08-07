@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+  </head>
+  <body>
+    <div>
+      <h1>Users</h1>
+
+      <ul>
+          <% for(var i = 0; i<users.length; i++) { %>
+            <li><%= users[i].name %> -- (<%= users[i].email %>) --
+              <a href="/users/<%= users[i].id %>">view</a>
+              <a href="/users/<%= users[i].id %>/edit">edit</a>
+              <form action="/users/<%=users[i].id %>" method="post">
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit">delete</button>
+              </form>
+
+            <% } %>
+      </ul>
+    </div>
+
+    <div>
+      <a href="/users/new">Add a new user</a>
+    </div>
+  </body>
+</html>
