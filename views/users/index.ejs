@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <script src="./javascripts/usersViews.js"></script>
     <meta charset="utf-8">
     <title><%= title %></title>
   </head>
@@ -13,9 +15,9 @@
             <li><%= users[i].name %> -- (<%= users[i].email %>) --
               <a href="/users/<%= users[i].id %>">view</a>
               <a href="/users/<%= users[i].id %>/edit">edit</a>
-              <form action="/users/<%=users[i].id %>" method="post">
+              <form class="deleteForm" action="/users/<%=users[i].id %>" method="post">
                 <input type="hidden" name="_method" value="DELETE">
-                <button type="submit">delete</button>
+                <button type="submit" class="deleteButton">delete</button>
               </form>
 
             <% } %>
